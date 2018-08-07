@@ -5,13 +5,21 @@ CHANGELOG
 
 To do list:
 -----------
-  - check md5 to ensure a proper download of the config file.
-  - add a window to enter username and password for those who don't want to store them in the .ini file.
-  - add a window to inform the user that the download and check of the file were successfull (or not).
 
   
 To fix list:
 ------------
+
+
+August 7 2018, Release version 0.4.0
+====================================
+Version for testing purposes.
+
+  ADDED:
+    - windows to inform the user about an update and the download window have been introduced.
+    - a window to enter username and password before connecting to the NAS has been added.
+    - a window has been added to inform the user about the success or the failure of the backup.
+    - when a file is downloaded, MD5 checksums are generated for the original and the downloaded files. If MD5 checksums don't match, a warning is displayed.
 
 
 August 7 2018, Release version 0.3.0

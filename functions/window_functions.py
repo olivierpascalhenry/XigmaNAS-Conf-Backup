@@ -2,17 +2,16 @@ import logging
 import os
 import time
 import platform
-import subprocess
 from ui.Ui_infowindow import Ui_infoWindow
 from ui.Ui_aboutlogwindow import Ui_aboutlogWindow
 from ui.Ui_optionwindow import Ui_optionWindow
-#from ui.Ui_updatewindow import Ui_updateWindow
+from ui.Ui_updatewindow import Ui_updateWindow
 #from ui.Ui_downloadwindow import Ui_downloadWindow
-#from ui.Ui_storewindow import Ui_storeWindow
+from ui.Ui_storewindow import Ui_storeWindow
 #from ui.Ui_successwindow import Ui_successWindow
-#from ui.Ui_credentialswindow import Ui_credentialsWindow
+from ui.Ui_credentialswindow import Ui_credentialsWindow
 from PyQt5 import QtWidgets, QtCore, QtGui
-#from functions.thread_functions import DownloadFile, CMEMSDataDownloadThread, DownloadProducts
+from functions.thread_functions import DownloadFile
 
 
 class MyInfo(QtWidgets.QDialog, Ui_infoWindow):
@@ -130,7 +129,7 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
         self.close()
 
 
-'''class MyUpdate(QtWidgets.QDialog, Ui_storeWindow):
+class MyUpdate(QtWidgets.QDialog, Ui_storeWindow):
     def __init__(self, url, folder):
         logging.info('window_functions.py - MyUpdate - __init__')
         QtWidgets.QWidget.__init__(self)
@@ -177,13 +176,13 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
         logging.info('window_functions.py - MyUpdate - closeEvent')
         self.thread.download_update.disconnect(self.update_progress_bar)
         if self.cancel:
-            os.remove(self.update_file)'''
+            os.remove(self.update_file)
 
 
 
 
 
-'''class MyWarningUpdate(QtWidgets.QDialog, Ui_updateWindow):
+class MyWarningUpdate(QtWidgets.QDialog, Ui_updateWindow):
     def __init__(self, frozen):
         logging.info('window_functions.py - MyWarningUpdate - __init__')
         QtWidgets.QWidget.__init__(self)
@@ -192,8 +191,8 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
             self.label_1.setText('<p>Click on <b>Download</b> to download the latest update from GitHub repository.</p>'
                                  + '<p>Once the download is over, the software will close automatically. The package is'
                                  + ' downloaded in the <b>Download</b> folder of your operating system. You will have t'
-                                 + 'o uncompress it and move all files in the directory of <b>CMEMS Data Downloader</b>'
-                                 + '. Do not delete <i>cmems_downloader.ini</i> if you want to keep all your options.</p>')
+                                 + 'o uncompress it and move all files in the directory of <b>XigmaNAS Conf Backup</b>'
+                                 + '. Do not delete <i>xigmanas_backup.ini</i> if you want to keep all your options.</p>')
             self.update_button.setText('Download')
         self.update_button.clicked.connect(self.closeWindow)
         self.cancel_button.clicked.connect(self.closeWindow)
@@ -201,13 +200,13 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
     def closeWindow(self):
         logging.info('window_functions.py - MyWarningUpdate - closeWindow')
         self.buttonName = self.sender().objectName()
-        self.close()'''
+        self.close()
 
 
 
         
         
-'''class MyCredentials(QtWidgets.QDialog, Ui_credentialsWindow):
+class MyCredentials(QtWidgets.QDialog, Ui_credentialsWindow):
     def __init__(self, user, password):
         QtWidgets.QWidget.__init__(self)
         logging.info('mainwindow.py - MyCredentials - __init__')
@@ -229,7 +228,4 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
 
     def closeWindow(self):
         logging.info('window_functions.py - MyCredentials - closeWindow')
-        self.close()'''
-        
-        
-
+        self.close()

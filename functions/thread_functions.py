@@ -1,7 +1,6 @@
 import logging
 import requests
 import time
-import json
 import platform
 import sys
 import urllib

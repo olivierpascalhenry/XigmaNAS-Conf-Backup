@@ -1,6 +1,6 @@
 Version
 -------
-XigmaNAS Conf Backup 0.3.0
+XigmaNAS Conf Backup 0.4.0
 
 !!! NOT SUITED FOR PRODUCTION ENVIRONMENT !!! ONLY FOR TESTING PURPOSES !!!
 
@@ -13,7 +13,7 @@ XigmaNAS Conf Backup is a small tool to download and backup the configuration .x
 Compatibility:
 --------------
     - sources : linux, windows, macos
-    - binaries : linux (to be done), windows (to be done)
+    - binaries : linux, windows
 
 
 Install instructions for binaries:

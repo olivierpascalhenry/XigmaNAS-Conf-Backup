@@ -11,9 +11,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_infoWindow(object):
     def setupUi(self, infoWindow):
         infoWindow.setObjectName("infoWindow")
-        infoWindow.resize(450, 180)
-        infoWindow.setMinimumSize(QtCore.QSize(450, 180))
-        infoWindow.setMaximumSize(QtCore.QSize(452, 16777215))
+        infoWindow.resize(600, 180)
+        infoWindow.setMinimumSize(QtCore.QSize(600, 180))
+        infoWindow.setMaximumSize(QtCore.QSize(600, 16777215))
         font = QtGui.QFont()
         font.setFamily("fonts/SourceSansPro-Regular.ttf")
         font.setPointSize(10)
