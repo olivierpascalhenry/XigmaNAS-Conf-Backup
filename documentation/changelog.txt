@@ -1,0 +1,37 @@
+=========
+CHANGELOG
+=========
+
+
+To do list:
+-----------
+  - check md5 to ensure a proper download of the config file.
+  - add a window to enter username and password for those who don't want to store them in the .ini file.
+  - add a window to inform the user that the download and check of the file were successfull (or not).
+
+  
+To fix list:
+------------
+
+
+August 7 2018, Release version 0.3.0
+====================================
+Version for testing purposes.
+
+  ADDED:
+    - the module paramiko has been included to take care of SSH connection.
+    - it is now possible to download the configuration file from XigmaNAS installation.
+    - an update system has been included.
+
+
+August 7 2018, Release version 0.2.0
+====================================
+Version for testing purposes. First version of the interface.
+
+  ADDED:
+    - windows for options and about have been introduced.
+
+
+August 7 2018, Release version 0.1.0
+====================================
+Version for testing purposes. First version of the interface.
