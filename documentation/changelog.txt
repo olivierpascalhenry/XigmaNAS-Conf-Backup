@@ -3,12 +3,12 @@ CHANGELOG
 =========
 
 
-To do list:
------------
+August 8 2018, Release version 0.9.0
+====================================
+Version for testing purposes. Code has been cleaned.
 
-  
-To fix list:
-------------
+  ADDED:
+    - proper exception for PermissionError has been added.
 
 
 August 7 2018, Release version 0.4.0

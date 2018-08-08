@@ -17,7 +17,7 @@ def launch_data_downloader(path):
     splash.show()
     config_dict = configparser.ConfigParser()
     if not os.path.exists(os.path.join(path, 'xigmanas_backup.ini')):
-        config_dict['LOG'] = {'level': 'DEBUG',
+        config_dict['LOG'] = {'level': 'INFO',
                               'path': ''
                               }
         config_dict['OPTIONS'] = {'language':'english',

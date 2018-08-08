@@ -2,15 +2,13 @@ import logging
 import os
 import time
 import platform
+from PyQt5 import QtWidgets, QtCore, QtGui
 from ui.Ui_infowindow import Ui_infoWindow
 from ui.Ui_aboutlogwindow import Ui_aboutlogWindow
 from ui.Ui_optionwindow import Ui_optionWindow
 from ui.Ui_updatewindow import Ui_updateWindow
-#from ui.Ui_downloadwindow import Ui_downloadWindow
 from ui.Ui_storewindow import Ui_storeWindow
-#from ui.Ui_successwindow import Ui_successWindow
 from ui.Ui_credentialswindow import Ui_credentialsWindow
-from PyQt5 import QtWidgets, QtCore, QtGui
 from functions.thread_functions import DownloadFile
 
 
@@ -41,26 +39,18 @@ class MyAbout(QtWidgets.QDialog, Ui_aboutlogWindow):
         self.close()
 
 
-
-
-
 class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
-    def __init__(self, config_dict, info_text):
+    def __init__(self, config_dict):
         logging.info('window_functions.py - MyOptions - __init__')
         QtWidgets.QWidget.__init__(self)
         self.setupUi(self)
         self.config_dict = config_dict
-        self.info_text = info_text
         itemDelegate = QtWidgets.QStyledItemDelegate()
         self.ow_comboBox_1.setItemDelegate(itemDelegate)
-        self.ok_button.clicked.connect(self.save_and_close)
-        self.cancel_button.clicked.connect(self.close_window)
+        self.ok_button.clicked.connect(self.save_options)
+        self.cancel_button.clicked.connect(self.closeWindow)
         self.open_button_1.clicked.connect(self.get_directory)
         self.open_button_2.clicked.connect(self.get_directory)
-        all_info_boxes = self.findChildren(QtWidgets.QToolButton)
-        for widget in all_info_boxes:
-            if 'info_button' in widget.objectName():
-                widget.clicked.connect(lambda: self.info_button())
         self.cancel = True
         self.read_config_dict()
         self.setTabOrder(self.line_1,self.line_2)
@@ -98,8 +88,8 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
         elif self.sender().objectName() == 'open_button_2':
             self.line_7.setText(str(out_dir.replace('/','\\')))
     
-    def save_and_close(self):
-        logging.debug('window_functions.py - MyOptions - save_and_close')
+    def save_options(self):
+        logging.debug('window_functions.py - MyOptions - save_options')
         self.cancel = False
         self.config_dict.set('LOG', 'level', str(self.ow_comboBox_1.currentText()))
         self.config_dict.set('LOG', 'path', str(self.line_1.text()))
@@ -109,23 +99,10 @@ class MyOptions(QtWidgets.QDialog, Ui_optionWindow):
         self.config_dict.set('CREDENTIALS', 'target', str(self.line_5.text()))
         self.config_dict.set('CREDENTIALS', 'target_port', str(self.line_6.text()))
         self.config_dict.set('CREDENTIALS', 'folder', str(self.line_7.text()))
-        self.close_window()
+        self.closeWindow()
     
-    def info_button(self):
-        logging.debug('window_functions.py - MyOptions - info_button - self.sender().objectName() ' + self.sender().objectName())
-        if 'infoButton' in self.sender().objectName():
-            x = QtGui.QCursor.pos().x()
-            y = QtGui.QCursor.pos().y()
-            x = x - 175
-            y = y + 50
-            self.infoWindow = MyInfo(self.info_text[self.sender().objectName()])
-            self.infoWindow.setMinimumSize(QtCore.QSize(450, self.infoWindow.sizeHint().height()))
-            self.infoWindow.setMaximumSize(QtCore.QSize(450, self.infoWindow.sizeHint().height()))
-            self.infoWindow.setGeometry(x, y, 450, self.infoWindow.sizeHint().height())
-            self.infoWindow.exec_()
-    
-    def close_window(self):
-        logging.info('window_functions.py - MyOptions - close_window')
+    def closeWindow(self):
+        logging.debug('window_functions.py - MyOptions - closeWindow')
         self.close()
 
 
@@ -179,9 +156,6 @@ class MyUpdate(QtWidgets.QDialog, Ui_storeWindow):
             os.remove(self.update_file)
 
 
-
-
-
 class MyWarningUpdate(QtWidgets.QDialog, Ui_updateWindow):
     def __init__(self, frozen):
         logging.info('window_functions.py - MyWarningUpdate - __init__')
@@ -202,9 +176,6 @@ class MyWarningUpdate(QtWidgets.QDialog, Ui_updateWindow):
         self.buttonName = self.sender().objectName()
         self.close()
 
-
-
-        
         
 class MyCredentials(QtWidgets.QDialog, Ui_credentialsWindow):
     def __init__(self, user, password):

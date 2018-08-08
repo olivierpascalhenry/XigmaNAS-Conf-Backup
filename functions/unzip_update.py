@@ -21,33 +21,33 @@ sys.excepthook = handle_exception
 
 
 logging.getLogger('').handlers = []
-logging.basicConfig(filename = 'cmems_updater_log.out',
+logging.basicConfig(filename = 'xcb_updater_log.out',
                     level = getattr(logging, 'INFO'),
                     filemode = 'w',
                     format = '%(asctime)s : %(levelname)s : %(message)s')
 
 
 logging.info('********************************************')
-logging.info('CMEMS Data Downloader update is starting ...')
+logging.info('XigmaNAS Conf Backup update is starting ...')
 logging.info('********************************************')
 
 zip_file = sys.argv[1]
 dest_folder = sys.argv[2]
-tmp_folder = tempfile.gettempdir() + '/cmems_data_downloader/'
+tmp_folder = tempfile.gettempdir() + '/xigmanas_conf_backup/'
 logging.info('zip file: ' + zip_file)
 logging.info('destination folder: ' + dest_folder)
 logging.info('temporary folder: ' + tmp_folder)
 
 print('')
-print('--------------------------------------------------------------------')
-print('--- An update is going to be installed for CMEMS Data Downloader ---')
-print('------ Do not close the terminal until the end of the process ------')
-print('--------------------------------------------------------------------')
+print('-------------------------------------------------------------------')
+print('--- An update is going to be installed for XigmaNAS Conf Backup ---')
+print('------ Do not close the terminal until the end of the process -----')
+print('-------------------------------------------------------------------')
 print('')
 print('File to unzip:\t\t' + zip_file)
 print('Destination folder:\t' + dest_folder)
 print('')
-print('CMEMS Data Downloader is closing, waiting...')
+print('XigmaNAS Conf Backup is closing, waiting...')
 time.sleep(3)
 print('')
 print('Uncompressing update...')
