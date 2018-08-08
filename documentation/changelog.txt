@@ -2,6 +2,21 @@
 CHANGELOG
 =========
 
+To fix:
+-------
+  - on linux, checking that the folder exist failed.
+
+  
+August 8 2018, Release version 1.0.0
+====================================
+Version ready.
+
+  FIXED:
+    - when a path to save config files is wrong, it is displayed in the GUI. It has been fixed
+    - when a path to save config files is wrong, the software failed to write the .ini file. It has been fixed.
+    - when entering a path through the open icon, all '/' were automatically replaced by '\\'. It has been fixed.
+    - shutil.copytree has been replaced by distutils.dir_util.copy_tree for the update system on linux os to allow overwrite.
+  
 
 August 8 2018, Release version 0.9.0
 ====================================

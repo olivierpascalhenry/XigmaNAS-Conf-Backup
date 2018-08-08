@@ -22,10 +22,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.config_path = path
         logging.info('mainwindow.py - UI initialization ...')
         self.setupUi(self)
-        self.populate_folder_target()
         self.backup.clicked.connect(self.backup_configuration_file)
         self.check_downloader_update()
         self.check_file_folder()
+        self.populate_folder_target()
         logging.info('mainwindow.py - UI initialized ...')
         logging.info('*****************************************')
     
@@ -208,7 +208,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                               + 'Please check that the folder exists. The folder option in the config file is going to be modified to the defa'
                               + 'ult folder.')
             self.config_dict.set('CREDENTIALS', 'folder', '')
-            with open(os.path.join(self.config_path, 'ecmwf_downloader.ini'), 'w') as config_file:
+            with open(os.path.join(self.config_path, 'xigmanas_backup.ini'), 'w') as config_file:
                         self.config_dict.write(config_file)
             text = ('The software has detected that the folder where XigmaNAS config files are saved doesn\'t exist anymore. It has been reseted in the config file'
                     + ' to the default folder. Please check your options and set a new folder for backup.')
@@ -295,7 +295,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                 self.close()
                             elif platform.system() == 'Linux':
                                 shutil.copy('functions/unzip_update.py', temp_folder)
-                                install_folder = self.config_path + '/test/'
+                                install_folder = self.config_path + '/'
                                 command = 'python3 ' + temp_folder + '/unzip_update.py ' + temp_folder + '/' + filename + ' ' + install_folder
                                 os.system('x-terminal-emulator -e ' + command)
                                 time.sleep(0.1)

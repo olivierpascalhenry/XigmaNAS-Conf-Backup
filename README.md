@@ -1,8 +1,6 @@
 Version
 -------
-XigmaNAS Conf Backup 0.9.0
-
-!!! NOT SUITED FOR PRODUCTION ENVIRONMENT !!! ONLY FOR TESTING PURPOSES !!!
+XigmaNAS Conf Backup 1.0.0
 
 
 Project Overview:
