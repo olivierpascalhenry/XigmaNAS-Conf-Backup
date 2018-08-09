@@ -1,6 +1,6 @@
 Version
 -------
-XigmaNAS Conf Backup 1.0.0
+XigmaNAS Conf Backup 1.0.1
 
 
 Project Overview:

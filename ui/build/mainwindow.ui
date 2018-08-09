@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
-    <height>251</height>
+    <width>650</width>
+    <height>250</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -227,8 +227,8 @@ QScrollBar::right-arrow:horizontal:pressed {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>543</width>
-         <height>172</height>
+         <width>616</width>
+         <height>171</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
@@ -238,6 +238,9 @@ QScrollBar::right-arrow:horizontal:pressed {
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
              <layout class="QGridLayout" name="gridLayout_2">
+              <property name="horizontalSpacing">
+               <number>10</number>
+              </property>
               <property name="verticalSpacing">
                <number>20</number>
               </property>
@@ -245,14 +248,14 @@ QScrollBar::right-arrow:horizontal:pressed {
                <widget class="QLabel" name="label_1">
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
-                  <height>27</height>
+                  <width>140</width>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>16777215</width>
-                  <height>27</height>
+                  <width>140</width>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="font">
@@ -268,6 +271,9 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="text">
                  <string>Backup folder:</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+                </property>
                </widget>
               </item>
               <item row="0" column="1">
@@ -275,13 +281,13 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
-                  <height>27</height>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>27</height>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="font">
@@ -296,20 +302,26 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="text">
                  <string>TMP</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
                <widget class="QLabel" name="label_2">
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
-                  <height>27</height>
+                  <width>140</width>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>16777215</width>
-                  <height>27</height>
+                  <width>140</width>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="font">
@@ -325,6 +337,9 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="text">
                  <string>Target:</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+                </property>
                </widget>
               </item>
               <item row="1" column="1">
@@ -332,13 +347,13 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
-                  <height>27</height>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>27</height>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="font">
@@ -353,22 +368,12 @@ QScrollBar::right-arrow:horizontal:pressed {
                 <property name="text">
                  <string>TMP</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
                </widget>
               </item>
              </layout>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>

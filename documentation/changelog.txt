@@ -2,9 +2,22 @@
 CHANGELOG
 =========
 
-To fix:
--------
-  - on linux, checking that the folder exist failed.
+To do list:
+-----------
+
+
+To fix list:
+------------
+
+
+August 9 2018, Release version 1.0.1
+====================================
+
+  FIXED:
+    - when a label is too long for the GUI, words are not wrapped. It has been fixed.
+  
+  MODIFIED:
+    - small changes in the main GUI.
 
   
 August 8 2018, Release version 1.0.0
